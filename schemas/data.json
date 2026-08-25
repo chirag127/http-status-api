@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chirag127.github.io/http-status-codes/schemas/data.json",
+  "title": "HTTP Status Codes",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "class",
+      "description"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[A-Z0-9-]+$"
+      },
+      "name": {
+        "type": "string"
+      },
+      "class": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      }
+    }
+  }
+}

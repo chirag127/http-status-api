@@ -1,0 +1,6 @@
+{
+  "id": "404",
+  "name": "Not Found",
+  "class": "client-error",
+  "description": "The requested resource was not found."
+}

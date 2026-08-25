@@ -1,0 +1,15 @@
+{
+  "status": "healthy",
+  "lastUpdated": "2026-08-25T13:59:36.547Z",
+  "sourceUpdatedAt": "2026-08-25T13:59:36.547Z",
+  "retrievedAt": "2026-08-25T13:59:36.547Z",
+  "recordCount": 7,
+  "version": "1.0.0",
+  "schemaVersion": "1.0.0",
+  "source": "RFC 9110 / MDN",
+  "license": "CC0-1.0",
+  "updateCadence": "manual",
+  "nextUpdateDue": "2026-11-23T13:59:36.547Z",
+  "lastFailedAt": null,
+  "failureReason": null
+}

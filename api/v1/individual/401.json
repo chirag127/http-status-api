@@ -1,0 +1,6 @@
+{
+  "id": "401",
+  "name": "Unauthorized",
+  "class": "client-error",
+  "description": "Authentication is required or invalid."
+}

@@ -1,0 +1,6 @@
+{
+  "id": "400",
+  "name": "Bad Request",
+  "class": "client-error",
+  "description": "The server cannot process the request."
+}

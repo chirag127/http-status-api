@@ -1,0 +1,47 @@
+{
+  "byId": {
+    "200": {
+      "id": "200",
+      "name": "OK",
+      "class": "success",
+      "description": "The request succeeded."
+    },
+    "201": {
+      "id": "201",
+      "name": "Created",
+      "class": "success",
+      "description": "The request succeeded and created a resource."
+    },
+    "301": {
+      "id": "301",
+      "name": "Moved Permanently",
+      "class": "redirect",
+      "description": "The resource has a new permanent URL."
+    },
+    "400": {
+      "id": "400",
+      "name": "Bad Request",
+      "class": "client-error",
+      "description": "The server cannot process the request."
+    },
+    "401": {
+      "id": "401",
+      "name": "Unauthorized",
+      "class": "client-error",
+      "description": "Authentication is required or invalid."
+    },
+    "404": {
+      "id": "404",
+      "name": "Not Found",
+      "class": "client-error",
+      "description": "The requested resource was not found."
+    },
+    "500": {
+      "id": "500",
+      "name": "Internal Server Error",
+      "class": "server-error",
+      "description": "The server encountered an unexpected condition."
+    }
+  },
+  "searchableFields": []
+}

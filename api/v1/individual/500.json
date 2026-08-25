@@ -1,0 +1,6 @@
+{
+  "id": "500",
+  "name": "Internal Server Error",
+  "class": "server-error",
+  "description": "The server encountered an unexpected condition."
+}
