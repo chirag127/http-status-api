@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HTTP Status Codes — Oriz Free Public APIs</title>
+  <meta name="description" content="All HTTP status codes with meaning, description, and typical use cases. Static JSON API, zero cost.">
+  <style>
+    :root { --bg:#0f172a; --surface:#1e293b; --text:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; --border:#334155; --ok:#4ade80; }
+    *{box-sizing:border-box;margin:0} body{font-family:system-ui;background:var(--bg);color:var(--text);line-height:1.6;max-width:900px;margin:0 auto;padding:2rem 1rem}
+    header{margin-bottom:2rem} h1{font-size:1.6rem;font-weight:700}
+    .eyebrow{color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+    .meta{color:var(--muted);font-size:.9rem;margin-top:.5rem}
+    .badge{display:inline-block;padding:.15em .6em;border-radius:999px;font-size:.75rem;font-weight:600;margin-right:.4em}
+    .badge-ok{background:rgba(74,222,128,.15);color:var(--ok)} .badge-warn{background:rgba(251,191,36,.15);color:#fbbf24} .badge-info{background:rgba(56,189,248,.15);color:var(--accent)}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem;margin-bottom:1rem}
+    .card h2{font-size:1.1rem;margin-bottom:.75rem}
+    .endpoint{background:#0b1220;border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:.75rem}
+    .endpoint code{font-family:ui-monospace,monospace;font-size:.85rem}
+    .method{color:var(--accent);font-weight:700;margin-right:.5rem}
+    .url{color:var(--text)}
+    .try-it{display:flex;gap:.5rem;margin-top:.5rem}
+    .try-it input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:.5rem .75rem;color:var(--text);font-size:.85rem}
+    .try-it button{background:var(--accent);color:#0f172a;border:none;border-radius:6px;padding:.5rem 1rem;font-weight:600;cursor:pointer;font-size:.85rem}
+    .try-it button:hover{opacity:.9} pre{background:#0b1220;border:1px solid var(--border);border-radius:8px;padding:1rem;overflow-x:auto;font-size:.8rem;margin-top:.5rem}
+    .status-bar{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+    .status-item{display:flex;align-items:center;gap:.4rem;font-size:.85rem;color:var(--muted)}
+    .status-dot{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+    .search-box{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;color:var(--text);font-size:1rem;margin-bottom:1rem}
+    .results{display:grid;gap:.5rem}
+    .result-row{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;display:flex;justify-content:space-between;align-items:center}
+    .result-row:hover{border-color:var(--accent)} .result-name{font-weight:600} .result-meta{color:var(--muted);font-size:.85rem}
+    footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem} a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">Oriz Free Public APIs</div>
+    <h1>HTTP Status Codes</h1>
+    <p class="meta"><span class="badge badge-ok">Active</span><span class="badge badge-info">CC0-1.0</span><span class="badge badge-info">7 records</span> All HTTP status codes with meaning, description, and typical use cases · Static JSON · Zero cost</p>
+  </header>
+  <div class="status-bar"><div class="status-item"><span class="status-dot"></span> Healthy</div><div class="status-item">Records: 7</div><div class="status-item">Version: 1.0.0</div><div class="status-item">Updated: 2026-08-26</div><div class="status-item">Source: <a href="RFC 9110 / MDN">RFC 9110 / MDN</a></div></div>
+  <div class="card"><h2>Try it</h2>
+    <div class="endpoint"><code><span class="method">GET</span><span class="url">/api/v1/data.json</span></code>
+      <div class="try-it"><input type="text" value="https://chirag127.github.io/http-status-api/api/v1/data.json" readonly><button onclick="copy(this)">Copy</button></div></div>
+    <div class="endpoint"><code><span class="method">GET</span><span class="url">/api/v1/individual/{id}.json</span></code>
+      <div class="try-it"><input type="text" id="recordId" placeholder="record-id" value=""><button onclick="fetchRecord()">Fetch</button></div><pre id="recordResult">// Enter ID and click Fetch</pre></div>
+  </div>
+  <div class="card"><h2>Search</h2><input class="search-box" id="searchInput" placeholder="Search records..." oninput="search(this.value)"><div class="results" id="searchResults"></div></div>
+  <div class="card"><h2>Endpoints</h2>
+    <div class="endpoint"><code><span class="method">GET</span><span class="url">/api/v1/data.json</span></code><p style="color:var(--muted);font-size:.85rem;margin-top:.4rem;">All 7 records</p></div>
+    <div class="endpoint"><code><span class="method">GET</span><span class="url">/api/v1/individual/{id}.json</span></code><p style="color:var(--muted);font-size:.85rem;margin-top:.4rem;">Single record by ID</p></div>
+    <div class="endpoint"><code><span class="method">GET</span><span class="url">/api/v1/search-index.json</span></code><p style="color:var(--muted);font-size:.85rem;margin-top:.4rem;">Client-side search index</p></div>
+    <div class="endpoint"><code><span class="method">GET</span><span class="url">/api/v1/meta.json</span></code><p style="color:var(--muted);font-size:.85rem;margin-top:.4rem;">Dataset metadata</p></div>
+  </div>
+  <div class="card"><h2>Schema</h2><p style="color:var(--muted);font-size:.85rem;margin-bottom:.75rem;">JSON Schema validates every record. <a href="schemas/data.json">View schema</a></p></div>
+  <div class="card"><h2>OpenAPI</h2><p style="color:var(--muted);font-size:.85rem;">Full OpenAPI 3.1.0 spec: <a href="openapi.yaml">openapi.yaml</a></p></div>
+  <footer><p>Data: <a href="RFC 9110 / MDN">RFC 9110 / MDN</a> · License: CC0-1.0</p><p>Part of <a href="https://oriz.in/apis">Oriz Free Public APIs</a> · <a href="https://github.com/chirag127/http-status-api">GitHub</a></p></footer>
+  <script>
+    let records=[], index={byId:{}, byName:{}, byCapital:{}};
+    async function loadData(){ const r=await fetch('api/v1/data.json'); records=await r.json(); const i=await fetch('api/v1/search-index.json'); index=await i.json(); }
+    function copy(btn){ const i=btn.previousElementSibling; i.select(); navigator.clipboard.writeText(i.value); btn.textContent='Copied!'; setTimeout(()=>btn.textContent='Copy',1500); }
+    async function fetchRecord(){ const id=document.getElementById('recordId').value.trim(); const pre=document.getElementById('recordResult'); try{ const r=await fetch(`api/v1/individual/${id}.json`); const d=await r.json(); pre.textContent=JSON.stringify(d,null,2); }catch(e){ pre.textContent='// Not found: '+id; } }
+    function search(q){ const res=document.getElementById('searchResults'); if(!q||q.length<2){res.innerHTML='';return} const t=q.toLowerCase(); const matched=new Set(); for(const [p,ids] of Object.entries(index.byName||{})){ if(p.startsWith(t)) ids.forEach(id=>matched.add(id)) } for(const [p,ids] of Object.entries(index.byCapital||{})){ if(p.startsWith(t)) ids.forEach(id=>matched.add(id)) } const items=Array.from(matched).map(id=>index.byId[id]).filter(Boolean); res.innerHTML=items.map(s=>`<div class="result-row"><div><div class="result-name">${s.name||s.title||s.code||s.id}</div><div class="result-meta">${s.capital||s.state||''} · ${s.status||''} · ${s.id}</div></div><code style="font-size:.8rem;color:var(--muted)">${s.id}</code></div>`).join(''); }
+    loadData();
+  </script>
+</body></html>
