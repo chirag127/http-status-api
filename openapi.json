@@ -1,0 +1,55 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "HTTP Status Codes",
+    "description": "All HTTP status codes with meaning, description, and typical use cases",
+    "version": "1.0.0",
+    "license": {
+      "name": "CC0-1.0"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://chirag127.github.io/http-status",
+      "description": "GitHub Pages"
+    }
+  ],
+  "paths": {
+    "/data.json": {
+      "get": {
+        "summary": "HTTP Status Codes data",
+        "description": "All HTTP status codes with meaning, description, and typical use cases",
+        "responses": {
+          "200": {
+            "description": "JSON response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data/status-codes": {
+      "get": {
+        "summary": "HTTP Status Codes",
+        "description": "All HTTP status codes with meaning, description, and typical use cases",
+        "responses": {
+          "200": {
+            "description": "JSON response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
