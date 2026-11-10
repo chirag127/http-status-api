@@ -1,0 +1,19 @@
+{
+  "id": "504",
+  "code": 504,
+  "name": "Gateway Timeout",
+  "phrase": "Gateway Timeout",
+  "state": "assigned",
+  "class": "server-error",
+  "category": "5xx",
+  "categoryName": "Server Error",
+  "temporary": false,
+  "description": "The 504 (Gateway Timeout) status code indicates that the server, while acting as a gateway or proxy, did not receive a timely response from an upstream server it needed to access in order to complete the request.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.6.5",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.6.5"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

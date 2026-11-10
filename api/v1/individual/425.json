@@ -1,0 +1,19 @@
+{
+  "id": "425",
+  "code": 425,
+  "name": "Too Early",
+  "phrase": "Too Early",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "A 425 (Too Early) status code indicates that the server is unwilling to risk processing a request that might be replayed.",
+  "spec": {
+    "rfc": "8470",
+    "section": null,
+    "url": "https://www.rfc-editor.org/rfc/rfc8470.html"
+  },
+  "registered": "2018-07-02",
+  "updated": null
+}

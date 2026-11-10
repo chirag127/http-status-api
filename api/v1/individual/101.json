@@ -1,0 +1,19 @@
+{
+  "id": "101",
+  "code": 101,
+  "name": "Switching Protocols",
+  "phrase": "Switching Protocols",
+  "state": "assigned",
+  "class": "informational",
+  "category": "1xx",
+  "categoryName": "Informational",
+  "temporary": false,
+  "description": "The 101 (Switching Protocols) status code indicates that the server understands and is willing to comply with the client's request, via the Upgrade header field (Section 7.8), for a change in the application protocol being used on this connection. The server MUST generate an Upgrade header field in the response that indicates which protocol(s) will be in effect after this response.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.2.2",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.2.2"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "508",
+  "code": 508,
+  "name": "Loop Detected",
+  "phrase": "Loop Detected",
+  "state": "assigned",
+  "class": "server-error",
+  "category": "5xx",
+  "categoryName": "Server Error",
+  "temporary": false,
+  "description": "The 508 (Loop Detected) status code indicates that the server terminated an operation because it encountered an infinite loop while processing a request with \"Depth: infinity\". This status indicates that the entire operation failed.",
+  "spec": {
+    "rfc": "5842",
+    "section": null,
+    "url": "https://www.rfc-editor.org/rfc/rfc5842.html"
+  },
+  "registered": null,
+  "updated": null
+}

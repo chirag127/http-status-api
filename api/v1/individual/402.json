@@ -1,0 +1,19 @@
+{
+  "id": "402",
+  "code": 402,
+  "name": "Payment Required",
+  "phrase": "Payment Required",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 402 (Payment Required) status code is reserved for future use.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.3",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.3"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

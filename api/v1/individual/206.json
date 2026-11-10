@@ -1,0 +1,19 @@
+{
+  "id": "206",
+  "code": 206,
+  "name": "Partial Content",
+  "phrase": "Partial Content",
+  "state": "assigned",
+  "class": "success",
+  "category": "2xx",
+  "categoryName": "Success",
+  "temporary": false,
+  "description": "The 206 (Partial Content) status code indicates that the server is successfully fulfilling a range request for the target resource by transferring one or more parts of the selected representation.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.3.7",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.3.7"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "415",
+  "code": 415,
+  "name": "Unsupported Media Type",
+  "phrase": "Unsupported Media Type",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 415 (Unsupported Media Type) status code indicates that the origin server is refusing to service the request because the content is in a format not supported by this method on the target resource.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.16",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.16"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

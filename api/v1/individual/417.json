@@ -1,0 +1,19 @@
+{
+  "id": "417",
+  "code": 417,
+  "name": "Expectation Failed",
+  "phrase": "Expectation Failed",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 417 (Expectation Failed) status code indicates that the expectation given in the request's Expect header field (Section 10.1.1) could not be met by at least one of the inbound servers.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.18",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.18"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

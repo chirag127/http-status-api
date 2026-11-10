@@ -1,0 +1,19 @@
+{
+  "id": "423",
+  "code": 423,
+  "name": "Locked",
+  "phrase": "Locked",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 423 (Locked) status code means the source or destination resource of a method is locked. This response SHOULD contain an appropriate precondition or postcondition code, such as 'lock-token-submitted' or 'no-conflicting-lock'.",
+  "spec": {
+    "rfc": "4918",
+    "section": null,
+    "url": "https://www.rfc-editor.org/rfc/rfc4918.html"
+  },
+  "registered": null,
+  "updated": null
+}

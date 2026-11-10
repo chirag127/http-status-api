@@ -1,0 +1,19 @@
+{
+  "id": "405",
+  "code": 405,
+  "name": "Method Not Allowed",
+  "phrase": "Method Not Allowed",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 405 (Method Not Allowed) status code indicates that the method received in the request-line is known by the origin server but not supported by the target resource. The origin server MUST generate an Allow header field in a 405 response containing a list of the target resource's currently supported methods.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.6",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.6"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

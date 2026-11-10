@@ -1,0 +1,19 @@
+{
+  "id": "103",
+  "code": 103,
+  "name": "Early Hints",
+  "phrase": "Early Hints",
+  "state": "assigned",
+  "class": "informational",
+  "category": "1xx",
+  "categoryName": "Informational",
+  "temporary": false,
+  "description": "The 103 (Early Hints) informational status code indicates to the client that the server is likely to send a final response with the header fields included in the informational response.",
+  "spec": {
+    "rfc": "8297",
+    "section": null,
+    "url": "https://www.rfc-editor.org/rfc/rfc8297.html"
+  },
+  "registered": "2017-10-30",
+  "updated": null
+}

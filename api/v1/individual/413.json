@@ -1,0 +1,19 @@
+{
+  "id": "413",
+  "code": 413,
+  "name": "Content Too Large",
+  "phrase": "Content Too Large",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 413 (Content Too Large) status code indicates that the server is refusing to process a request because the request content is larger than the server is willing or able to process. The server MAY terminate the request, if the protocol version in use allows it; otherwise, the server MAY close the connection.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.14",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.14"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

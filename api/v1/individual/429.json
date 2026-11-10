@@ -1,0 +1,19 @@
+{
+  "id": "429",
+  "code": 429,
+  "name": "Too Many Requests",
+  "phrase": "Too Many Requests",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 429 status code indicates that the user has sent too many requests in a given amount of time (\"rate limiting\").",
+  "spec": {
+    "rfc": "6585",
+    "section": null,
+    "url": "https://www.rfc-editor.org/rfc/rfc6585.html"
+  },
+  "registered": null,
+  "updated": null
+}

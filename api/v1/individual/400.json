@@ -1,6 +1,19 @@
 {
   "id": "400",
+  "code": 400,
   "name": "Bad Request",
+  "phrase": "Bad Request",
+  "state": "assigned",
   "class": "client-error",
-  "description": "The server cannot process the request."
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 400 (Bad Request) status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.1",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
 }

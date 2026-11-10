@@ -1,0 +1,19 @@
+{
+  "id": "207",
+  "code": 207,
+  "name": "Multi-Status",
+  "phrase": "Multi-Status",
+  "state": "assigned",
+  "class": "success",
+  "category": "2xx",
+  "categoryName": "Success",
+  "temporary": false,
+  "description": "The 207 (Multi-Status) status code provides status for multiple independent operations (see Section 13 for more information).",
+  "spec": {
+    "rfc": "4918",
+    "section": null,
+    "url": "https://www.rfc-editor.org/rfc/rfc4918.html"
+  },
+  "registered": null,
+  "updated": null
+}

@@ -1,0 +1,19 @@
+{
+  "id": "426",
+  "code": 426,
+  "name": "Upgrade Required",
+  "phrase": "Upgrade Required",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 426 (Upgrade Required) status code indicates that the server refuses to perform the request using the current protocol but might be willing to do so after the client upgrades to a different protocol. The server MUST send an Upgrade header field in a 426 response to indicate the required protocol(s) (Section 7.8).",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.22",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.22"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

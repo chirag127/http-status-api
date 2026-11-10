@@ -1,0 +1,19 @@
+{
+  "id": "406",
+  "code": 406,
+  "name": "Not Acceptable",
+  "phrase": "Not Acceptable",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 406 (Not Acceptable) status code indicates that the target resource does not have a current representation that would be acceptable to the user agent, according to the proactive negotiation header fields received in the request (Section 12.1), and the server is unwilling to supply a default representation.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.7",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.7"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

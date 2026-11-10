@@ -1,0 +1,19 @@
+{
+  "id": "412",
+  "code": 412,
+  "name": "Precondition Failed",
+  "phrase": "Precondition Failed",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 412 (Precondition Failed) status code indicates that one or more conditions given in the request header fields evaluated to false when tested on the server (Section 13). This response status code allows the client to place preconditions on the current resource state (its current representations and metadata) and, thus, prevent the request method from being applied if the target resource is in an unexpected state.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.13",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.13"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

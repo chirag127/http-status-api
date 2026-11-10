@@ -1,6 +1,19 @@
 {
   "id": "201",
+  "code": 201,
   "name": "Created",
+  "phrase": "Created",
+  "state": "assigned",
   "class": "success",
-  "description": "The request succeeded and created a resource."
+  "category": "2xx",
+  "categoryName": "Success",
+  "temporary": false,
+  "description": "The 201 (Created) status code indicates that the request has been fulfilled and has resulted in one or more new resources being created. The primary resource created by the request is identified by either a Location header field in the response or, if no Location header field is received, by the target URI.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.3.2",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.3.2"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
 }

@@ -2,30 +2,124 @@
   "openapi": "3.1.0",
   "info": {
     "title": "HTTP Status Codes",
-    "description": "All HTTP status codes with meaning, description, and typical use cases",
+    "description": "Every HTTP status code registered with IANA, with its reason phrase, class and the RFC paragraph that defines it.",
     "version": "1.0.0",
     "license": {
-      "name": "CC0-1.0"
+      "name": "MIT (code); IANA registry and IETF RFC text (data)"
+    },
+    "contact": {
+      "name": "Chirag Singhal",
+      "url": "https://github.com/chirag127",
+      "email": "chirag@oriz.in"
     }
   },
   "servers": [
     {
-      "url": "https://chirag127.github.io/http-status",
+      "url": "https://chirag127.github.io/http-status-api",
       "description": "GitHub Pages"
     }
   ],
   "paths": {
-    "/data.json": {
+    "/api/v1/data.json": {
       "get": {
-        "summary": "HTTP Status Codes data",
-        "description": "All HTTP status codes with meaning, description, and typical use cases",
+        "summary": "All HTTP status code records",
+        "operationId": "listData",
         "responses": {
           "200": {
-            "description": "JSON response",
+            "description": "JSON array of records",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array"
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "Status code as a three-digit string"
+                      },
+                      "code": {
+                        "type": "integer",
+                        "description": "Same code as a number"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Reason phrase from the IANA registry"
+                      },
+                      "phrase": {
+                        "type": "string",
+                        "description": "Alias of name, kept so IANA wording is explicit"
+                      },
+                      "state": {
+                        "type": "string",
+                        "enum": [
+                          "assigned",
+                          "reserved",
+                          "unassigned"
+                        ],
+                        "description": "Registry state of the number"
+                      },
+                      "class": {
+                        "type": "string",
+                        "enum": [
+                          "informational",
+                          "success",
+                          "redirect",
+                          "client-error",
+                          "server-error"
+                        ],
+                        "description": "Slug for the code class"
+                      },
+                      "category": {
+                        "type": "string",
+                        "description": "Code class as 1xx..5xx"
+                      },
+                      "categoryName": {
+                        "type": "string",
+                        "description": "Code class as given in the registry note"
+                      },
+                      "temporary": {
+                        "type": "boolean",
+                        "description": "True for temporary registrations"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "First paragraph of the RFC section that defines the code"
+                      },
+                      "spec": {
+                        "type": "object",
+                        "description": "The specification that defines the code",
+                        "properties": {
+                          "rfc": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "RFC number",
+                            "example": "\"9110\""
+                          },
+                          "section": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "Section within the RFC",
+                            "example": "\"15.5.5\""
+                          },
+                          "url": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "Canonical URL for the section",
+                            "example": "\"https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.5\""
+                          }
+                        }
+                      },
+                      "registered": {
+                        "type": "string",
+                        "description": "IANA registration date, when the record has one"
+                      },
+                      "updated": {
+                        "type": "string",
+                        "description": "IANA last-updated date, when the record has one"
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -33,17 +127,180 @@
         }
       }
     },
-    "/data/status-codes": {
+    "/api/v1/individual/{id}.json": {
       "get": {
-        "summary": "HTTP Status Codes",
-        "description": "All HTTP status codes with meaning, description, and typical use cases",
+        "summary": "Single record by id",
+        "operationId": "getRecord",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "JSON response",
+            "description": "One record object",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array"
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Status code as a three-digit string"
+                    },
+                    "code": {
+                      "type": "integer",
+                      "description": "Same code as a number"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Reason phrase from the IANA registry"
+                    },
+                    "phrase": {
+                      "type": "string",
+                      "description": "Alias of name, kept so IANA wording is explicit"
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "assigned",
+                        "reserved",
+                        "unassigned"
+                      ],
+                      "description": "Registry state of the number"
+                    },
+                    "class": {
+                      "type": "string",
+                      "enum": [
+                        "informational",
+                        "success",
+                        "redirect",
+                        "client-error",
+                        "server-error"
+                      ],
+                      "description": "Slug for the code class"
+                    },
+                    "category": {
+                      "type": "string",
+                      "description": "Code class as 1xx..5xx"
+                    },
+                    "categoryName": {
+                      "type": "string",
+                      "description": "Code class as given in the registry note"
+                    },
+                    "temporary": {
+                      "type": "boolean",
+                      "description": "True for temporary registrations"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "First paragraph of the RFC section that defines the code"
+                    },
+                    "spec": {
+                      "type": "object",
+                      "description": "The specification that defines the code",
+                      "properties": {
+                        "rfc": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "RFC number",
+                          "example": "\"9110\""
+                        },
+                        "section": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "Section within the RFC",
+                          "example": "\"15.5.5\""
+                        },
+                        "url": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "Canonical URL for the section",
+                          "example": "\"https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.5\""
+                        }
+                      }
+                    },
+                    "registered": {
+                      "type": "string",
+                      "description": "IANA registration date, when the record has one"
+                    },
+                    "updated": {
+                      "type": "string",
+                      "description": "IANA last-updated date, when the record has one"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No record with that id"
+          }
+        }
+      }
+    },
+    "/api/v1/search-index.json": {
+      "get": {
+        "summary": "All records keyed by id",
+        "operationId": "getSearchIndex",
+        "responses": {
+          "200": {
+            "description": "Object of records keyed by id"
+          }
+        }
+      }
+    },
+    "/api/v1/meta.json": {
+      "get": {
+        "summary": "Dataset metadata (record count, source, retrieval time)",
+        "operationId": "getMeta",
+        "responses": {
+          "200": {
+            "description": "Metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "lastUpdated": {
+                      "type": "string"
+                    },
+                    "sourceUpdatedAt": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "retrievedAt": {
+                      "type": "string"
+                    },
+                    "recordCount": {
+                      "type": "integer"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "schemaVersion": {
+                      "type": "string"
+                    },
+                    "source": {
+                      "type": "string"
+                    },
+                    "sourceUrl": {
+                      "type": "string"
+                    },
+                    "license": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }

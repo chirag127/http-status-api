@@ -1,0 +1,19 @@
+{
+  "id": "509",
+  "code": 509,
+  "name": "Unassigned",
+  "phrase": "Unassigned",
+  "state": "unassigned",
+  "class": "server-error",
+  "category": "5xx",
+  "categoryName": "Server Error",
+  "temporary": false,
+  "description": "Unassigned in the IANA HTTP Status Code Registry; no status code is currently registered for this number.",
+  "spec": {
+    "rfc": null,
+    "section": null,
+    "url": null
+  },
+  "registered": null,
+  "updated": null
+}

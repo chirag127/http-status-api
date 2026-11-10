@@ -1,0 +1,19 @@
+{
+  "id": "408",
+  "code": 408,
+  "name": "Request Timeout",
+  "phrase": "Request Timeout",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 408 (Request Timeout) status code indicates that the server did not receive a complete request message within the time that it was prepared to wait.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.9",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.9"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

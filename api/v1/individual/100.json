@@ -1,0 +1,19 @@
+{
+  "id": "100",
+  "code": 100,
+  "name": "Continue",
+  "phrase": "Continue",
+  "state": "assigned",
+  "class": "informational",
+  "category": "1xx",
+  "categoryName": "Informational",
+  "temporary": false,
+  "description": "The 100 (Continue) status code indicates that the initial part of a request has been received and has not yet been rejected by the server. The server intends to send a final response after the request has been fully received and acted upon.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.2.1",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.2.1"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

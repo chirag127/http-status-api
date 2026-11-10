@@ -1,0 +1,19 @@
+{
+  "id": "503",
+  "code": 503,
+  "name": "Service Unavailable",
+  "phrase": "Service Unavailable",
+  "state": "assigned",
+  "class": "server-error",
+  "category": "5xx",
+  "categoryName": "Server Error",
+  "temporary": false,
+  "description": "The 503 (Service Unavailable) status code indicates that the server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay. The server MAY send a Retry-After header field (Section 10.2.3) to suggest an appropriate amount of time for the client to wait before retrying the request.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.6.4",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.6.4"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

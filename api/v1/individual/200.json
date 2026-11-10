@@ -1,6 +1,19 @@
 {
   "id": "200",
+  "code": 200,
   "name": "OK",
+  "phrase": "OK",
+  "state": "assigned",
   "class": "success",
-  "description": "The request succeeded."
+  "category": "2xx",
+  "categoryName": "Success",
+  "temporary": false,
+  "description": "The 200 (OK) status code indicates that the request has succeeded. The content sent in a 200 response depends on the request method. For the methods defined by this specification, the intended meaning of the content can be summarized as:",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.3.1",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.3.1"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
 }

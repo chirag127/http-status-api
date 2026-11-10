@@ -1,0 +1,19 @@
+{
+  "id": "414",
+  "code": 414,
+  "name": "URI Too Long",
+  "phrase": "URI Too Long",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 414 (URI Too Long) status code indicates that the server is refusing to service the request because the target URI is longer than the server is willing to interpret. This rare condition is only likely to occur when a client has improperly converted a POST request to a GET request with long query information, when the client has descended into an infinite loop of redirection (e.g., a redirected URI prefix that points to a suffix of itself) or when the server is under attack by a client attempting to exploit potential security holes.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.15",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.15"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

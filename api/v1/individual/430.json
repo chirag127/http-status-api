@@ -1,0 +1,19 @@
+{
+  "id": "430",
+  "code": 430,
+  "name": "Unassigned",
+  "phrase": "Unassigned",
+  "state": "unassigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "Unassigned in the IANA HTTP Status Code Registry; no status code is currently registered for this number.",
+  "spec": {
+    "rfc": null,
+    "section": null,
+    "url": null
+  },
+  "registered": null,
+  "updated": null
+}

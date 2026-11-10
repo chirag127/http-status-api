@@ -1,0 +1,19 @@
+{
+  "id": "202",
+  "code": 202,
+  "name": "Accepted",
+  "phrase": "Accepted",
+  "state": "assigned",
+  "class": "success",
+  "category": "2xx",
+  "categoryName": "Success",
+  "temporary": false,
+  "description": "The 202 (Accepted) status code indicates that the request has been accepted for processing, but the processing has not been completed. The request might or might not eventually be acted upon, as it might be disallowed when processing actually takes place. There is no facility in HTTP for re-sending a status code from an asynchronous operation.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.3.3",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.3.3"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

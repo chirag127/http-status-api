@@ -1,6 +1,19 @@
 {
   "id": "500",
+  "code": 500,
   "name": "Internal Server Error",
+  "phrase": "Internal Server Error",
+  "state": "assigned",
   "class": "server-error",
-  "description": "The server encountered an unexpected condition."
+  "category": "5xx",
+  "categoryName": "Server Error",
+  "temporary": false,
+  "description": "The 500 (Internal Server Error) status code indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.6.1",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.6.1"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
 }

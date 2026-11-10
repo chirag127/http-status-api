@@ -1,0 +1,19 @@
+{
+  "id": "302",
+  "code": 302,
+  "name": "Found",
+  "phrase": "Found",
+  "state": "assigned",
+  "class": "redirect",
+  "category": "3xx",
+  "categoryName": "Redirection",
+  "temporary": false,
+  "description": "The 302 (Found) status code indicates that the target resource resides temporarily under a different URI. Since the redirection might be altered on occasion, the client ought to continue to use the target URI for future requests.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.4.3",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.4.3"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

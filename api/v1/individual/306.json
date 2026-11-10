@@ -1,0 +1,19 @@
+{
+  "id": "306",
+  "code": 306,
+  "name": "(Unused)",
+  "phrase": "(Unused)",
+  "state": "reserved",
+  "class": "redirect",
+  "category": "3xx",
+  "categoryName": "Redirection",
+  "temporary": false,
+  "description": "The 306 status code was defined in a previous version of this specification, is no longer used, and the code is reserved.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.4.7",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.4.7"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

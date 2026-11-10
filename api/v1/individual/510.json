@@ -1,0 +1,19 @@
+{
+  "id": "510",
+  "code": 510,
+  "name": "Not Extended (OBSOLETED)",
+  "phrase": "Not Extended (OBSOLETED)",
+  "state": "assigned",
+  "class": "server-error",
+  "category": "5xx",
+  "categoryName": "Server Error",
+  "temporary": false,
+  "description": "The policy for accessing the resource has not been met in the request. The server should send back all the information necessary for the client to issue an extended request. It is outside the scope of this specification to specify how the extensions inform the client.",
+  "spec": {
+    "rfc": "2774",
+    "section": null,
+    "url": "https://www.rfc-editor.org/rfc/rfc2774.html"
+  },
+  "registered": null,
+  "updated": null
+}

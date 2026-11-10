@@ -1,6 +1,19 @@
 {
   "id": "401",
+  "code": 401,
   "name": "Unauthorized",
+  "phrase": "Unauthorized",
+  "state": "assigned",
   "class": "client-error",
-  "description": "Authentication is required or invalid."
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 401 (Unauthorized) status code indicates that the request has not been applied because it lacks valid authentication credentials for the target resource. The server generating a 401 response MUST send a WWW-Authenticate header field (Section 11.6.1) containing at least one challenge applicable to the target resource.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.2",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.2"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
 }

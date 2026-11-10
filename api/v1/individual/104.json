@@ -1,0 +1,19 @@
+{
+  "id": "104",
+  "code": 104,
+  "name": "Upload Resumption Supported (TEMPORARY - registered 2024-11-13, extension registered 2025-09-15, expires 2026-11-13)",
+  "phrase": "Upload Resumption Supported (TEMPORARY - registered 2024-11-13, extension registered 2025-09-15, expires 2026-11-13)",
+  "state": "assigned",
+  "class": "informational",
+  "category": "1xx",
+  "categoryName": "Informational",
+  "temporary": true,
+  "description": "Upload Resumption Supported (TEMPORARY - registered 2024-11-13, extension registered 2025-09-15, expires 2026-11-13)",
+  "spec": {
+    "rfc": null,
+    "section": null,
+    "url": "https://datatracker.ietf.org/doc/draft-ietf-httpbis-resumable-upload-05/"
+  },
+  "registered": "2024-11-13",
+  "updated": "2025-09-15"
+}

@@ -1,66 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>HTTP Status Codes — Oriz Free Public APIs</title>
-  <meta name="description" content="All HTTP status codes with meaning, description, and typical use cases. Static JSON API, zero cost.">
-  <style>
-    :root { --bg:#0f172a; --surface:#1e293b; --text:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; --border:#334155; --ok:#4ade80; }
-    *{box-sizing:border-box;margin:0} body{font-family:system-ui;background:var(--bg);color:var(--text);line-height:1.6;max-width:900px;margin:0 auto;padding:2rem 1rem}
-    header{margin-bottom:2rem} h1{font-size:1.6rem;font-weight:700}
-    .eyebrow{color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
-    .meta{color:var(--muted);font-size:.9rem;margin-top:.5rem}
-    .badge{display:inline-block;padding:.15em .6em;border-radius:999px;font-size:.75rem;font-weight:600;margin-right:.4em}
-    .badge-ok{background:rgba(74,222,128,.15);color:var(--ok)} .badge-warn{background:rgba(251,191,36,.15);color:#fbbf24} .badge-info{background:rgba(56,189,248,.15);color:var(--accent)}
-    .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem;margin-bottom:1rem}
-    .card h2{font-size:1.1rem;margin-bottom:.75rem}
-    .endpoint{background:#0b1220;border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:.75rem}
-    .endpoint code{font-family:ui-monospace,monospace;font-size:.85rem}
-    .method{color:var(--accent);font-weight:700;margin-right:.5rem}
-    .url{color:var(--text)}
-    .try-it{display:flex;gap:.5rem;margin-top:.5rem}
-    .try-it input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:.5rem .75rem;color:var(--text);font-size:.85rem}
-    .try-it button{background:var(--accent);color:#0f172a;border:none;border-radius:6px;padding:.5rem 1rem;font-weight:600;cursor:pointer;font-size:.85rem}
-    .try-it button:hover{opacity:.9} pre{background:#0b1220;border:1px solid var(--border);border-radius:8px;padding:1rem;overflow-x:auto;font-size:.8rem;margin-top:.5rem}
-    .status-bar{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
-    .status-item{display:flex;align-items:center;gap:.4rem;font-size:.85rem;color:var(--muted)}
-    .status-dot{width:8px;height:8px;border-radius:50%;background:var(--ok)}
-    .search-box{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;color:var(--text);font-size:1rem;margin-bottom:1rem}
-    .results{display:grid;gap:.5rem}
-    .result-row{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;display:flex;justify-content:space-between;align-items:center}
-    .result-row:hover{border-color:var(--accent)} .result-name{font-weight:600} .result-meta{color:var(--muted);font-size:.85rem}
-    footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem} a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HTTP Status Codes — free static JSON API</title>
+<meta name="description" content="Every status code in the IANA HTTP Status Code Registry — 67 records, 62 of them assigned — with the reason phrase, the code class, and the RFC paragraph that defines it. No authentication, no rate limit.">
+<style>
+  :root{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--muted:#94a3b8;--accent:#38bdf8;--border:#334155;--ok:#4ade80}
+  *{box-sizing:border-box;margin:0}
+  body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;max-width:900px;margin:0 auto;padding:2rem 1rem}
+  h1{font-size:1.6rem;font-weight:700;margin-bottom:.4rem}
+  h2{font-size:1.05rem;margin-bottom:.75rem}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:.85em}
+  .eyebrow{color:var(--accent);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+  .meta{color:var(--muted);font-size:.9rem;margin-top:.5rem}
+  .badge{display:inline-block;padding:.15em .6em;border-radius:999px;font-size:.72rem;font-weight:600;margin-right:.4em}
+  .badge-ok{background:rgba(74,222,128,.15);color:var(--ok)}
+  .badge-info{background:rgba(56,189,248,.15);color:var(--accent)}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem;margin:1rem 0}
+  .status-bar{display:flex;gap:1.25rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted);margin-top:1rem}
+  .status-dot{width:8px;height:8px;border-radius:50%;background:var(--ok);display:inline-block;margin-right:.35rem;vertical-align:middle}
+  .try{display:flex;gap:.5rem;margin-top:.5rem;flex-wrap:wrap}
+  .try input{flex:1;min-width:220px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:.5rem .75rem;color:var(--text);font-family:ui-monospace,monospace;font-size:.82rem}
+  .try button{background:var(--accent);color:#0f172a;border:0;border-radius:6px;padding:.5rem 1rem;font-weight:600;cursor:pointer;font-size:.82rem}
+  pre{background:#0b1220;border:1px solid var(--border);border-radius:8px;padding:1rem;overflow-x:auto;font-size:.8rem;margin-top:.5rem;color:#cbd5e1}
+  table{width:100%;border-collapse:collapse;font-size:.85rem}
+  th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--border);vertical-align:top}
+  th{color:var(--muted);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+  td.num{white-space:nowrap;color:var(--muted)}
+  .search{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.7rem 1rem;color:var(--text);font-size:.95rem}
+  .results{display:grid;gap:.4rem;margin-top:.75rem}
+  .row{background:#0b1220;border:1px solid var(--border);border-radius:8px;padding:.6rem .9rem;display:flex;justify-content:space-between;gap:1rem;font-size:.85rem}
+  .row code{color:var(--muted)}
+  .hire-me{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+  .hire-me h3{font-size:.95rem;color:var(--text);margin-bottom:.35rem}
+  .hire-me p{margin-bottom:.4rem}
+  .hire-me .links{line-height:1.9}
+</style>
 </head>
 <body>
-  <header>
-    <div class="eyebrow">Oriz Free Public APIs</div>
-    <h1>HTTP Status Codes</h1>
-    <p class="meta"><span class="badge badge-ok">Active</span><span class="badge badge-info">CC0-1.0</span><span class="badge badge-info">7 records</span> All HTTP status codes with meaning, description, and typical use cases · Static JSON · Zero cost</p>
-  </header>
-  <div class="status-bar"><div class="status-item"><span class="status-dot"></span> Healthy</div><div class="status-item">Records: 7</div><div class="status-item">Version: 1.0.0</div><div class="status-item">Updated: 2026-08-26</div><div class="status-item">Source: <a href="RFC 9110 / MDN">RFC 9110 / MDN</a></div></div>
-  <div class="card"><h2>Try it</h2>
-    <div class="endpoint"><code><span class="method">GET</span><span class="url">/api/v1/data.json</span></code>
-      <div class="try-it"><input type="text" value="https://chirag127.github.io/http-status-api/api/v1/data.json" readonly><button onclick="copy(this)">Copy</button></div></div>
-    <div class="endpoint"><code><span class="method">GET</span><span class="url">/api/v1/individual/{id}.json</span></code>
-      <div class="try-it"><input type="text" id="recordId" placeholder="record-id" value=""><button onclick="fetchRecord()">Fetch</button></div><pre id="recordResult">// Enter ID and click Fetch</pre></div>
+<header>
+  <div class="eyebrow">Free static JSON API</div>
+  <h1>HTTP Status Codes</h1>
+  <p class="meta"><span class="badge badge-ok">Live</span><span class="badge badge-info">IANA registry data</span><span class="badge badge-info"><span data-count>67</span> records</span>Every status code in the IANA HTTP Status Code Registry — 67 records, 62 of them assigned — with the reason phrase, the code class, and the RFC paragraph that defines it.</p>
+  <div class="status-bar">
+    <span><span class="status-dot"></span>Healthy</span>
+    <span>Records: <span data-count>67</span></span>
+    <span>Updated: <span data-updated>2026-11-10</span></span>
+    <span>Source: <a href="https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" rel="noopener">upstream</a></span>
   </div>
-  <div class="card"><h2>Search</h2><input class="search-box" id="searchInput" placeholder="Search records..." oninput="search(this.value)"><div class="results" id="searchResults"></div></div>
-  <div class="card"><h2>Endpoints</h2>
-    <div class="endpoint"><code><span class="method">GET</span><span class="url">/api/v1/data.json</span></code><p style="color:var(--muted);font-size:.85rem;margin-top:.4rem;">All 7 records</p></div>
-    <div class="endpoint"><code><span class="method">GET</span><span class="url">/api/v1/individual/{id}.json</span></code><p style="color:var(--muted);font-size:.85rem;margin-top:.4rem;">Single record by ID</p></div>
-    <div class="endpoint"><code><span class="method">GET</span><span class="url">/api/v1/search-index.json</span></code><p style="color:var(--muted);font-size:.85rem;margin-top:.4rem;">Client-side search index</p></div>
-    <div class="endpoint"><code><span class="method">GET</span><span class="url">/api/v1/meta.json</span></code><p style="color:var(--muted);font-size:.85rem;margin-top:.4rem;">Dataset metadata</p></div>
+</header>
+
+<section class="card">
+  <h2>Fetch it</h2>
+  <pre id="curl">curl https://chirag127.github.io/http-status-api/api/v1/data.json</pre>
+  <div class="try"><button onclick="copyCurl(event)">Copy curl</button>
+    <input type="text" id="recordId" value="404" aria-label="Record id">
+    <button onclick="fetchRecord()">Fetch one record</button>
   </div>
-  <div class="card"><h2>Schema</h2><p style="color:var(--muted);font-size:.85rem;margin-bottom:.75rem;">JSON Schema validates every record. <a href="schemas/data.json">View schema</a></p></div>
-  <div class="card"><h2>OpenAPI</h2><p style="color:var(--muted);font-size:.85rem;">Full OpenAPI 3.1.0 spec: <a href="openapi.yaml">openapi.yaml</a></p></div>
-  <footer><p>Data: <a href="RFC 9110 / MDN">RFC 9110 / MDN</a> · License: CC0-1.0</p><p>Part of <a href="https://oriz.in/apis">Oriz Free Public APIs</a> · <a href="https://github.com/chirag127/http-status-api">GitHub</a></p></footer>
-  <script>
-    let records=[], index={byId:{}, byName:{}, byCapital:{}};
-    async function loadData(){ const r=await fetch('api/v1/data.json'); records=await r.json(); const i=await fetch('api/v1/search-index.json'); index=await i.json(); }
-    function copy(btn){ const i=btn.previousElementSibling; i.select(); navigator.clipboard.writeText(i.value); btn.textContent='Copied!'; setTimeout(()=>btn.textContent='Copy',1500); }
-    async function fetchRecord(){ const id=document.getElementById('recordId').value.trim(); const pre=document.getElementById('recordResult'); try{ const r=await fetch(`api/v1/individual/${id}.json`); const d=await r.json(); pre.textContent=JSON.stringify(d,null,2); }catch(e){ pre.textContent='// Not found: '+id; } }
-    function search(q){ const res=document.getElementById('searchResults'); if(!q||q.length<2){res.innerHTML='';return} const t=q.toLowerCase(); const matched=new Set(); for(const [p,ids] of Object.entries(index.byName||{})){ if(p.startsWith(t)) ids.forEach(id=>matched.add(id)) } for(const [p,ids] of Object.entries(index.byCapital||{})){ if(p.startsWith(t)) ids.forEach(id=>matched.add(id)) } const items=Array.from(matched).map(id=>index.byId[id]).filter(Boolean); res.innerHTML=items.map(s=>`<div class="result-row"><div><div class="result-name">${s.name||s.title||s.code||s.id}</div><div class="result-meta">${s.capital||s.state||''} · ${s.status||''} · ${s.id}</div></div><code style="font-size:.8rem;color:var(--muted)">${s.id}</code></div>`).join(''); }
-    loadData();
-  </script>
-</body></html>
+  <pre id="recordResult">// Enter an id and press "Fetch one record"</pre>
+</section>
+
+<section class="card">
+  <h2>What you get</h2>
+  <table><thead><tr><th>Field</th><th>Example</th><th>Notes</th></tr></thead>
+  <tbody>
+          <tr><td><code>id</code></td><td><code>"404"</code></td><td>The three-digit code. A string, so <code>"008"</code>-style codes never lose their leading zeros.</td></tr>
+          <tr><td><code>code</code></td><td><code>404</code></td><td>The same value as a number, for arithmetic.</td></tr>
+          <tr><td><code>name</code></td><td><code>"Not Found"</code></td><td>Reason phrase exactly as the IANA registry writes it. <code>phrase</code> repeats it for callers that prefer that name.</td></tr>
+          <tr><td><code>state</code></td><td><code>"assigned"</code></td><td><code>assigned</code>, or <code>reserved</code> for 306 and 418, or <code>unassigned</code> for 427, 430 and 509.</td></tr>
+          <tr><td><code>class</code> / <code>category</code></td><td><code>"client-error"</code> / <code>"4xx"</code></td><td>Slug plus the 1xx–5xx class the registry note defines.</td></tr>
+          <tr><td><code>description</code></td><td><code>"The 404 (Not Found) status code indicates that the origin server did not find a current representation for the target resource…"</code></td><td>First paragraph of the RFC section that defines the code.</td></tr>
+          <tr><td><code>spec</code></td><td><code>{"rfc":"9110","section":"15.5.5","url":"https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.5"}</code></td><td>RFC, section and a link straight to the defining text.</td></tr>
+          <tr><td>Endpoint</td><td>Description</td><td>Size</td></tr>
+          <tr><td><code>/api/v1/data.json</code></td><td>All 67 records, in code order</td><td>50,368 bytes</td></tr>
+          <tr><td><code>/api/v1/individual/{id}.json</code></td><td>One record, e.g. <code>/api/v1/individual/404.json</code></td><td>450–1,032 bytes each</td></tr>
+          <tr><td><code>/api/v1/search-index.json</code></td><td>The same records keyed by code, for a single-fetch lookup</td><td>53,399 bytes</td></tr>
+          <tr><td><code>/api/v1/meta.json</code></td><td>Record count, source, retrieval time</td><td>591 bytes</td></tr>
+  </tbody></table>
+</section>
+
+<section class="card">
+  <h2>Endpoints</h2>
+  <table><thead><tr><th>Endpoint</th><th>Description</th><th>Size</th></tr></thead>
+  <tbody>
+          <tr><td><code>/api/v1/data.json</code></td><td>All 67 records, in code order</td><td class="num">50,368 bytes</td></tr>
+          <tr><td><code>/api/v1/individual/{id}.json</code></td><td>One record, e.g. <code>/api/v1/individual/404.json</code></td><td class="num">450–1,032 bytes each</td></tr>
+          <tr><td><code>/api/v1/search-index.json</code></td><td>The same records keyed by code, for a single-fetch lookup</td><td class="num">53,399 bytes</td></tr>
+          <tr><td><code>/api/v1/meta.json</code></td><td>Record count, source, retrieval time</td><td class="num">591 bytes</td></tr>
+  </tbody></table>
+  <p class="meta">Contract: <a href="openapi.yaml">openapi.yaml</a> · Schema: <a href="schemas/data.json">schemas/data.json</a> · Metadata: <a href="api/v1/meta.json">api/v1/meta.json</a></p>
+</section>
+
+<section class="card">
+  <h2>Search the whole file</h2>
+  <input class="search" id="search" placeholder="Type an id or a name…" aria-label="Search records">
+  <div class="results" id="results"></div>
+</section>
+
+<footer class="hire-me">
+  <h3>Hire me</h3>
+  <p>Chirag Singhal — building free, open APIs and tools.</p>
+  <p class="links">
+    <a href="mailto:chirag@oriz.in">chirag@oriz.in</a> ·
+    <a href="https://github.com/chirag127">GitHub</a> ·
+    <a href="https://www.linkedin.com/in/chirag127/">LinkedIn</a> ·
+    <a href="https://x.com/singhal127">X</a> ·
+    <a href="https://www.youtube.com/@ChiragSinghal127">YouTube</a> ·
+    <a href="https://www.instagram.com/chiragsinghal127/">Instagram</a> ·
+    <a href="https://www.reddit.com/user/Far_Macaron_9910/">Reddit</a> ·
+    <a href="https://buymeacoffee.com/chirag127">Buy me a coffee</a>
+  </p>
+  <p>Data: IANA HTTP Status Code Registry · Licence: IANA registry data; description text is IETF RFC text · Code: MIT · <a href="https://github.com/chirag127/http-status-api">Repository</a></p>
+</footer>
+
+<script>
+  const API = 'api/v1/';
+  let byId = null, list = null;
+
+  // meta.json is the source of truth for the counts on this page, so a data
+  // refresh cannot leave a stale "N records" badge behind.
+  fetch(API + 'meta.json').then(r => r.ok ? r.json() : null).then(m => {
+    if (!m) return;
+    document.querySelectorAll('[data-count]').forEach(el => el.textContent = m.recordCount.toLocaleString('en-US'));
+    const u = document.querySelector('[data-updated]');
+    if (u && m.lastUpdated) u.textContent = m.lastUpdated.slice(0, 10);
+  }).catch(() => {});
+
+  function copyCurl(ev) {
+    const btn = ev.currentTarget;
+    navigator.clipboard.writeText(document.getElementById('curl').textContent).then(() => {
+      btn.textContent = 'Copied';
+      setTimeout(() => { btn.textContent = 'Copy curl'; }, 1500);
+    });
+  }
+
+  async function fetchRecord() {
+    const id = document.getElementById('recordId').value.trim();
+    const out = document.getElementById('recordResult');
+    if (!id) return;
+    out.textContent = '// loading ' + id;
+    try {
+      const r = await fetch(API + 'individual/' + encodeURIComponent(id) + '.json');
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      out.textContent = JSON.stringify(await r.json(), null, 2);
+    } catch (e) {
+      out.textContent = '// no record for "' + id + '" (' + e.message + ')';
+    }
+  }
+
+  async function ensure() {
+    if (!byId) {
+      const r = await fetch(API + 'search-index.json');
+      byId = (await r.json()).byId;
+      list = Object.values(byId);
+    }
+  }
+
+  document.getElementById('search').addEventListener('input', async (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    const box = document.getElementById('results');
+    if (q.length < 2) { box.innerHTML = ''; return; }
+    await ensure();
+    const hits = list.filter(rec =>
+      String(rec.id).toLowerCase().includes(q) || String(rec.name || '').toLowerCase().includes(q)
+    ).slice(0, 25);
+    box.innerHTML = hits.map(rec => '<div class="row"><span>' + (rec.name || rec.alpha3 || rec.id) + '</span><code>' + rec.id + '</code></div>').join('')
+      || '<div class="row"><span>No match in ' + list.length + ' records</span></div>';
+  });
+</script>
+</body>
+</html>

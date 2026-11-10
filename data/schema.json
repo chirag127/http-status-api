@@ -2,22 +2,103 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://chirag127.github.io/http-status/data/schema.json",
   "title": "HTTP Status Codes",
-  "description": "All HTTP status codes with meaning, description, and typical use cases",
+  "description": "Every HTTP status code registered with IANA, with its reason phrase, class and the RFC paragraph that defines it.",
   "type": "array",
   "items": {
     "type": "object",
     "required": [
       "id",
-      "name"
+      "code",
+      "name",
+      "state",
+      "class",
+      "category",
+      "description"
     ],
     "properties": {
       "id": {
         "type": "string",
-        "description": "Unique identifier"
+        "description": "Status code as a three-digit string"
+      },
+      "code": {
+        "type": "integer",
+        "description": "Same code as a number"
       },
       "name": {
         "type": "string",
-        "description": "Display name"
+        "description": "Reason phrase from the IANA registry"
+      },
+      "phrase": {
+        "type": "string",
+        "description": "Alias of name, kept so IANA wording is explicit"
+      },
+      "state": {
+        "type": "string",
+        "enum": [
+          "assigned",
+          "reserved",
+          "unassigned"
+        ],
+        "description": "Registry state of the number"
+      },
+      "class": {
+        "type": "string",
+        "enum": [
+          "informational",
+          "success",
+          "redirect",
+          "client-error",
+          "server-error"
+        ],
+        "description": "Slug for the code class"
+      },
+      "category": {
+        "type": "string",
+        "description": "Code class as 1xx..5xx"
+      },
+      "categoryName": {
+        "type": "string",
+        "description": "Code class as given in the registry note"
+      },
+      "temporary": {
+        "type": "boolean",
+        "description": "True for temporary registrations"
+      },
+      "description": {
+        "type": "string",
+        "description": "First paragraph of the RFC section that defines the code"
+      },
+      "spec": {
+        "type": "object",
+        "description": "The specification that defines the code",
+        "properties": {
+          "rfc": {
+            "type": "string",
+            "nullable": true,
+            "description": "RFC number",
+            "example": "\"9110\""
+          },
+          "section": {
+            "type": "string",
+            "nullable": true,
+            "description": "Section within the RFC",
+            "example": "\"15.5.5\""
+          },
+          "url": {
+            "type": "string",
+            "nullable": true,
+            "description": "Canonical URL for the section",
+            "example": "\"https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.5\""
+          }
+        }
+      },
+      "registered": {
+        "type": "string",
+        "description": "IANA registration date, when the record has one"
+      },
+      "updated": {
+        "type": "string",
+        "description": "IANA last-updated date, when the record has one"
       }
     }
   }

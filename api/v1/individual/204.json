@@ -1,0 +1,19 @@
+{
+  "id": "204",
+  "code": 204,
+  "name": "No Content",
+  "phrase": "No Content",
+  "state": "assigned",
+  "class": "success",
+  "category": "2xx",
+  "categoryName": "Success",
+  "temporary": false,
+  "description": "The 204 (No Content) status code indicates that the server has successfully fulfilled the request and that there is no additional content to send in the response content. Metadata in the response header fields refer to the target resource and its selected representation after the requested action was applied.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.3.5",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.3.5"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

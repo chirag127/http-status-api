@@ -1,0 +1,19 @@
+{
+  "id": "421",
+  "code": 421,
+  "name": "Misdirected Request",
+  "phrase": "Misdirected Request",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 421 (Misdirected Request) status code indicates that the request was directed at a server that is unable or unwilling to produce an authoritative response for the target URI. An origin server (or gateway acting on behalf of the origin server) sends 421 to reject a target URI that does not match an origin for which the server has been configured (Section 4.3.1) or does not match the connection context over which the request was received (Section 7.4).",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.20",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.20"
+  },
+  "registered": "2021-10-01",
+  "updated": null
+}

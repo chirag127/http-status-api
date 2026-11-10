@@ -1,0 +1,19 @@
+{
+  "id": "451",
+  "code": 451,
+  "name": "Unavailable For Legal Reasons",
+  "phrase": "Unavailable For Legal Reasons",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "This status code indicates that the server is denying access to the resource as a consequence of a legal demand.",
+  "spec": {
+    "rfc": "7725",
+    "section": null,
+    "url": "https://www.rfc-editor.org/rfc/rfc7725.html"
+  },
+  "registered": "2015-12-21",
+  "updated": null
+}

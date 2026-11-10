@@ -1,0 +1,19 @@
+{
+  "id": "422",
+  "code": 422,
+  "name": "Unprocessable Content",
+  "phrase": "Unprocessable Content",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 422 (Unprocessable Content) status code indicates that the server understands the content type of the request content (hence a 415 (Unsupported Media Type) status code is inappropriate), and the syntax of the request content is correct, but it was unable to process the contained instructions. For example, this status code can be sent if an XML request content contains well-formed (i.e., syntactically correct), but semantically erroneous XML instructions.",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.21",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.21"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}

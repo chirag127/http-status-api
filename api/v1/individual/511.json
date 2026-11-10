@@ -1,0 +1,19 @@
+{
+  "id": "511",
+  "code": 511,
+  "name": "Network Authentication Required",
+  "phrase": "Network Authentication Required",
+  "state": "assigned",
+  "class": "server-error",
+  "category": "5xx",
+  "categoryName": "Server Error",
+  "temporary": false,
+  "description": "The 511 status code indicates that the client needs to authenticate to gain network access.",
+  "spec": {
+    "rfc": "6585",
+    "section": null,
+    "url": "https://www.rfc-editor.org/rfc/rfc6585.html"
+  },
+  "registered": null,
+  "updated": null
+}

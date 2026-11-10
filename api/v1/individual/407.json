@@ -1,0 +1,19 @@
+{
+  "id": "407",
+  "code": 407,
+  "name": "Proxy Authentication Required",
+  "phrase": "Proxy Authentication Required",
+  "state": "assigned",
+  "class": "client-error",
+  "category": "4xx",
+  "categoryName": "Client Error",
+  "temporary": false,
+  "description": "The 407 (Proxy Authentication Required) status code is similar to 401 (Unauthorized), but it indicates that the client needs to authenticate itself in order to use a proxy for this request. The proxy MUST send a Proxy-Authenticate header field (Section 11.7.1) containing a challenge applicable to that proxy for the request. The client MAY repeat the request with a new or replaced Proxy-Authorization header field (Section 11.7.2).",
+  "spec": {
+    "rfc": "9110",
+    "section": "15.5.8",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.8"
+  },
+  "registered": null,
+  "updated": "2021-10-01"
+}
